@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OlympicDataApplication.iml" filepath="$PROJECT_DIR$/OlympicDataApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OlympicGUI.iml" filepath="$PROJECT_DIR$/OlympicGUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

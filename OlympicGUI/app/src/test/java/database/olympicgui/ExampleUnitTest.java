@@ -1,4 +1,4 @@
-package database.olympicdataapplication;
+package database.olympicgui;
 
 import org.junit.Test;
 

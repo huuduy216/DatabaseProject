@@ -1,4 +1,4 @@
-package database.olympicdataapplication;
+package database.olympicgui;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
