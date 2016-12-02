@@ -57,8 +57,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Olympics"
-            android:id="@+id/button4"
+            android:text="Sport"
+            android:id="@+id/button_sport"
             android:layout_below="@+id/button_athlete"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="62dp" />
@@ -66,9 +66,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Records"
             android:id="@+id/button5"
-            android:layout_below="@+id/button4"
+            android:layout_below="@+id/button_sport"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="58dp" />
     </RelativeLayout>

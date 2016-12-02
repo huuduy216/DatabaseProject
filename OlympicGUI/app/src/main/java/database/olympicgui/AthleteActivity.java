@@ -1,6 +1,5 @@
 package database.olympicgui;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.widget.SimpleCursorAdapter;
@@ -13,9 +12,9 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -24,6 +23,7 @@ public class AthleteActivity extends AppCompatActivity {
     private static EditText name;
     private static Spinner sport;
     private static Spinner gender;
+    private static Spinner country;
     private static SQLiteDatabase db;
     private static ListView lv;
     @Override
@@ -57,8 +57,8 @@ public class AthleteActivity extends AppCompatActivity {
     {
         String[] projection = {"_id","name","country","gender","date_of_birth","weight","height","sport"};
         int[] to = {R.id.athlete_id,R.id.athlete_name,R.id.athlete_country,R.id.athlete_gender,R.id.athlete_dob,R.id.athlete_weight,R.id.athlete_height,R.id.athlete_sport};
-        String[] argument = {"%"+ name.getText().toString() +"%","%"+ gender.getSelectedItem().toString() +"%","%"+ sport.getSelectedItem().toString()+"%"};
-        Cursor c = db.query("Athlete",projection," name LIKE ? AND gender LIKE ? AND sport LIKE ?",argument,null,null,null);
+        String[] argument = {"%"+ name.getText().toString() +"%", gender.getSelectedItem().toString() ,"%"+ sport.getSelectedItem().toString()+"%","%"+ country.getSelectedItem().toString()+"%"};
+        Cursor c = db.query("Athlete",projection," name LIKE ? AND gender LIKE ? AND sport LIKE ? AND country LIKE ?",argument,null,null,null);
         ListAdapter adapter = new SimpleCursorAdapter(this,
                 R.layout.layout_athlete,
                 c,
@@ -66,15 +66,18 @@ public class AthleteActivity extends AppCompatActivity {
                 to,0);
 
         lv.setAdapter(adapter);
+        Toast.makeText(this,"Fun fact: we found " + c.getCount() +" athlete(s)",Toast.LENGTH_LONG).show();
     }
 
     private void initSpinners()
     {
         sport = (Spinner)findViewById(R.id.spinner_sport);
-        gender = (Spinner)findViewById(R.id.spinner_gender);
+        gender = (Spinner)findViewById(R.id.spinner_stadium);
+        country = (Spinner)findViewById(R.id.spinner_country);
 
         initSport();
         initGender();
+        initCountry();
     }
 
     private void initSport() {
@@ -116,5 +119,26 @@ public class AthleteActivity extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gender.setAdapter(adapter);
+    }
+
+    private void initCountry() {
+        List<String> list = new ArrayList<String>();
+        String[] projection = {"country"};
+        list.add("");
+
+        Cursor c = db.query(true,"Athlete",projection,null,null,null,null,null,null);
+        c.moveToFirst();
+        while(!c.isAfterLast())
+        {
+            list.add(c.getString(0));
+            c.moveToNext();
+        }
+        Collections.sort(list);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, list);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        country.setAdapter(adapter);
     }
 }

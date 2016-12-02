@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 hello.setText("What do you want to look for?");
                 findViewById(R.id.layout_searchChoice).setVisibility(View.VISIBLE);
             }
-        }, 500);
+        }, 1500);
 
 
     }
@@ -48,11 +48,20 @@ public class MainActivity extends AppCompatActivity {
     private void initButtons()
     {
         Button athlete = (Button) findViewById(R.id.button_athlete);
+        Button sport = (Button)findViewById(R.id.button_sport);
 
         athlete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,AthleteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        sport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,EventActivity.class);
                 startActivity(intent);
             }
         });

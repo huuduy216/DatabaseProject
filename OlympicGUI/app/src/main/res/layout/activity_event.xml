@@ -101,7 +101,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name:"
+            android:text="Athlete Name:"
             android:id="@+id/textView2"
             android:layout_above="@+id/spinner_stadium"
             android:layout_alignParentStart="true" />
@@ -109,7 +109,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender:"
+            android:text="Stadium:"
             android:id="@+id/textView3"
             android:layout_above="@+id/spinner_sport"
             android:layout_alignTop="@+id/spinner_stadium"
