@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView hello = (TextView) findViewById(R.id.hello) ;
         hello.setText("Hello, we are just setting a few things up. Please wait a moment");
-        dbHelper = new DatabaseHelper(this);
+
+        dbHelper = new DatabaseHelper(this);//Create Database Helper object
+
         //After hello prompt
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 hello.setText("What do you want to look for?");
                 findViewById(R.id.layout_searchChoice).setVisibility(View.VISIBLE);
             }
-        }, 1500);
+        }, 1500);//Set new text and delay a bit
 
 
     }
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     {
         Button athlete = (Button) findViewById(R.id.button_athlete);
         Button sport = (Button)findViewById(R.id.button_sport);
+        Button country = (Button)findViewById(R.id.button_country);
 
         athlete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,EventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        country.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,CountryActivity.class);
                 startActivity(intent);
             }
         });

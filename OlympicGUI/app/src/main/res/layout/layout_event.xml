@@ -11,7 +11,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Id"
+            android:text="Sport:"
             android:id="@+id/textView"
             android:layout_margin="3dp" />
 
@@ -19,9 +19,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/athlete_id"
+            android:id="@+id/event_sport"
             android:layout_column="2"
             android:layout_margin="3dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hidden"
+            android:id="@+id/textView_id"
+            android:layout_column="8"
+            android:visibility="invisible" />
     </TableRow>
 
     <TableRow
@@ -31,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="Discipline:"
             android:id="@+id/textView5"
             android:layout_margin="3dp" />
 
@@ -39,39 +47,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/athlete_name"
+            android:id="@+id/event_discipline"
             android:layout_column="2"
             android:layout_margin="3dp" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/Humidity:">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Country"
+            android:text="Stadium:"
             android:id="@+id/textView6"
             android:layout_margin="3dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/athlete_country"
+            android:text="New Texte"
+            android:id="@+id/event_stadium"
             android:layout_column="2"
             android:layout_margin="3dp" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/Temperature">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:text="Temperature:"
             android:id="@+id/textView7"
             android:layout_margin="3dp" />
 
@@ -79,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/athlete_gender"
+            android:id="@+id/event_temp"
             android:layout_column="2"
             android:layout_margin="3dp" />
     </TableRow>
@@ -91,7 +101,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date of Birth"
+            android:text="Humidity:"
             android:id="@+id/textView8"
             android:layout_margin="3dp" />
 
@@ -99,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/athlete_dob"
+            android:id="@+id/event_humid"
             android:layout_column="2"
             android:layout_margin="3dp" />
     </TableRow>
@@ -111,7 +121,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Height"
+            android:text="Olympic:"
             android:id="@+id/textView9"
             android:layout_margin="3dp" />
 
@@ -119,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/athlete_height"
+            android:id="@+id/event_olympic"
             android:layout_column="2"
             android:layout_margin="3dp" />
     </TableRow>
@@ -131,7 +141,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Weight"
+            android:text="Number of Athlete:"
             android:id="@+id/textView10"
             android:layout_margin="3dp" />
 
@@ -139,7 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/athlete_weight"
+            android:id="@+id/event_numOfAthlete"
             android:layout_column="2"
             android:layout_margin="3dp" />
     </TableRow>
@@ -148,20 +158,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sport"
-            android:id="@+id/textView11"
-            android:layout_margin="3dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/athlete_sport"
-            android:layout_column="2"
-            android:layout_margin="3dp" />
     </TableRow>
 
 </TableLayout>

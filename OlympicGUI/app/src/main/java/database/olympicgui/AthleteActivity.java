@@ -57,8 +57,8 @@ public class AthleteActivity extends AppCompatActivity {
     {
         String[] projection = {"_id","name","country","gender","date_of_birth","weight","height","sport"};
         int[] to = {R.id.athlete_id,R.id.athlete_name,R.id.athlete_country,R.id.athlete_gender,R.id.athlete_dob,R.id.athlete_weight,R.id.athlete_height,R.id.athlete_sport};
-        String[] argument = {"%"+ name.getText().toString() +"%", gender.getSelectedItem().toString() ,"%"+ sport.getSelectedItem().toString()+"%","%"+ country.getSelectedItem().toString()+"%"};
-        Cursor c = db.query("Athlete",projection," name LIKE ? AND gender LIKE ? AND sport LIKE ? AND country LIKE ?",argument,null,null,null);
+        String[] argument = {"%"+ name.getText().toString() +"%","%"+ gender.getSelectedItem().toString() ,"%"+ sport.getSelectedItem().toString()+"%","%"+ country.getSelectedItem().toString()+"%"};
+        Cursor c = db.rawQuery("SELECT id AS _id,name,country,gender,date_of_birth,weight,height,sport FROM Athlete WHERE name LIKE ? AND gender LIKE ? AND sport LIKE ? AND country LIKE ?",argument);
         ListAdapter adapter = new SimpleCursorAdapter(this,
                 R.layout.layout_athlete,
                 c,
@@ -73,7 +73,7 @@ public class AthleteActivity extends AppCompatActivity {
     {
         sport = (Spinner)findViewById(R.id.spinner_sport);
         gender = (Spinner)findViewById(R.id.spinner_stadium);
-        country = (Spinner)findViewById(R.id.spinner_country);
+        country = (Spinner)findViewById(R.id.spinner_olympic);
 
         initSport();
         initGender();

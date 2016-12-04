@@ -13,7 +13,8 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:layout_width="0px"
-        android:layout_height="0px"/>
+        android:layout_height="0px"
+        android:id="@+id/linearLayout" />
 
     <!-- :nextFocusUp and :nextFocusLeft have been set to the id of this component
     to prevent the dummy from receiving focus again -->
@@ -24,56 +25,57 @@
         android:nextFocusLeft="@id/autotext"
         android:visibility="invisible" />
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView_athlete"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listView_event"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/option">
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner_sport"
-            android:layout_centerVertical="true"
-            android:spinnerMode="dropdown"
-            android:layout_alignParentEnd="true"
-            android:background="@color/switch_thumb_normal_material_light"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:layout_toEndOf="@+id/textView12" />
+        android:id="@+id/option"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true">
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinner_stadium"
-            android:layout_above="@+id/spinner_sport"
             android:spinnerMode="dropdown"
-            android:layout_alignParentEnd="true"
             android:background="@color/switch_thumb_normal_material_light"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginBottom="3dp"
-            android:layout_toEndOf="@+id/textView3" />
+            android:layout_below="@+id/spinner_olympic"
+            android:layout_alignStart="@+id/spinner_olympic"
+            android:layout_margin="3dp"
+            android:layout_marginTop="3dp" />
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner_country"
+            android:id="@+id/spinner_sport"
+            android:spinnerMode="dropdown"
+            android:background="@color/switch_thumb_normal_material_light"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/spinner_stadium" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_olympic"
             android:spinnerMode="dropdown"
             android:background="@color/switch_thumb_normal_material_light"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:layout_below="@+id/spinner_sport"
             android:layout_alignParentEnd="true"
-            android:layout_alignStart="@+id/editText_athleteName" />
+            android:layout_toEndOf="@+id/textView4"
+            android:layout_margin="3dp"
+            android:layout_marginTop="3dp" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -83,8 +85,8 @@
             android:id="@+id/editText_athleteName"
             android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
-            android:layout_above="@+id/textView3"
-            android:layout_alignEnd="@+id/spinner_stadium"
+            android:layout_above="@+id/spinner_sport"
+            android:layout_alignEnd="@+id/spinner_olympic"
             android:layout_alignStart="@+id/spinner_sport" />
 
         <Button
@@ -96,24 +98,27 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="58dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignEnd="@+id/editText_athleteName" />
+            android:background="@drawable/buttonshape"
+            android:layout_alignEnd="@+id/editText_athleteName"
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Athlete Name:"
             android:id="@+id/textView2"
-            android:layout_above="@+id/spinner_stadium"
-            android:layout_alignParentStart="true" />
+            android:layout_above="@+id/textView4"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Stadium:"
             android:id="@+id/textView3"
-            android:layout_above="@+id/spinner_sport"
+            android:layout_alignParentStart="true"
             android:layout_alignTop="@+id/spinner_stadium"
-            android:layout_alignParentStart="true" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -123,16 +128,19 @@
             android:layout_alignBottom="@+id/spinner_sport"
             android:layout_alignEnd="@+id/textView2"
             android:layout_alignTop="@+id/spinner_sport"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Country:"
+            android:text="Olympic:"
             android:id="@+id/textView12"
             android:layout_below="@+id/spinner_sport"
             android:layout_alignParentStart="true"
-            android:layout_alignBottom="@+id/spinner_country" />
+            android:layout_alignBottom="@+id/spinner_olympic"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
 </RelativeLayout>

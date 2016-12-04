@@ -17,8 +17,11 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="90dp"
         android:textAlignment="center"
-        android:textSize="20dp"
-        android:layout_alignParentEnd="true" />
+        android:textSize="25sp"
+        android:layout_alignParentEnd="true"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        android:padding="3sp" />
 
     <RelativeLayout
         android:id="@+id/loadingPanel"
@@ -47,30 +50,37 @@
         android:layout_below="@+id/hello">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
             android:text="Athlete"
             android:id="@+id/button_athlete"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttonshape"
+            android:textColor="#ffffff"
+            android:padding="3sp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
             android:text="Sport"
             android:id="@+id/button_sport"
+            android:layout_marginTop="62dp"
             android:layout_below="@+id/button_athlete"
+            android:background="@drawable/buttonshape"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="62dp" />
+            android:textColor="#ffffff" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:text="Records"
-            android:id="@+id/button5"
+            android:text="Country"
+            android:id="@+id/button_country"
             android:layout_below="@+id/button_sport"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="58dp" />
+            android:background="@drawable/buttonshape"
+            android:layout_marginTop="58dp"
+            android:textColor="#ffffff" />
     </RelativeLayout>
 
 </RelativeLayout>
