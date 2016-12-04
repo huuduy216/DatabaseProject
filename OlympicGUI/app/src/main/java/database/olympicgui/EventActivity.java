@@ -59,7 +59,7 @@ public class EventActivity extends AppCompatActivity
     {
         String[] projection = {"_id","temp","humidity","StadiumName","Discipline","Summer_Olympics.Name","Number_Of_Athlete","Event.Id"};
         int[] to = {R.id.event_sport,R.id.event_temp,R.id.event_humid,R.id.event_stadium,R.id.event_discipline,R.id.event_olympic,R.id.event_numOfAthlete,R.id.textView_id};//textview_id is hiddent
-        String[] argument = {"%"+ name.getText().toString() +"%",  sport.getSelectedItem().toString() ,"%"+ stadium.getSelectedItem().toString() +"%","%"+ olympic.getSelectedItem().toString()+"%"};
+        String[] argument = {"%"+ name.getText().toString() +"%",  sport.getSelectedItem().toString()+"%" ,"%"+ stadium.getSelectedItem().toString() +"%","%"+ olympic.getSelectedItem().toString()+"%"};
         final Cursor c = db.rawQuery("SELECT Event.Sport AS _id, (Event.Temperature || \" °C\") AS temp, (Event.Humidity ||'%') as humidity, StadiumName, Discipline, Summer_Olympics.Name , COUNT(AthleteId) AS Number_Of_Athlete, Event.Id " +
                 "FROM event INNER JOIN eventAthlete ON Event.Id = EventAthlete.EventId " +
                 "INNER JOIN Athlete ON Athlete.Id = EventAthlete.AthleteId " +
