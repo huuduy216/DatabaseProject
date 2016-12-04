@@ -55,7 +55,7 @@ public class CountryActivity extends AppCompatActivity {
     {
         String[] projection = {"_id","gold","silver","bronze"};
         int[] to = {R.id.textView_country,R.id.textView_gold,R.id.textView_silver,R.id.textView_bronze};//textview_id is hiddent
-        String[] argument = {"%" + sport.getSelectedItem().toString() +"%"};
+        String[] argument = { sport.getSelectedItem().toString() };
         CheckBox sortByMedal = (CheckBox)findViewById(R.id.checkBox_sortByMedal);
         String sortBy = null;
         if(sortByMedal.isChecked())
