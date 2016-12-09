@@ -31,6 +31,7 @@ public class CountryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country);
 
+        setTitle("Country Results");
         lv = (ListView) findViewById(R.id.listView_country);
         lv.setVisibility(View.INVISIBLE);//hide the listview that show the result
 
@@ -70,7 +71,7 @@ public class CountryActivity extends AppCompatActivity {
                 "FROM Athlete LEFT JOIN Winner_Of t1 ON Athlete.id = t1.GoldWinnerId "+
                 "LEFT JOIN Winner_Of t2 ON Athlete.id = t2.SilverWinnerId "+
                 "LEFT JOIN Winner_Of t3 ON Athlete.id = t3.BronzeWinnerId "+
-                "WHERE country LIKE ? "+
+                "WHERE sport LIKE ? "+
                 "GROUP BY country "+
                 "ORDER BY "+ sortBy
                 ,argument);

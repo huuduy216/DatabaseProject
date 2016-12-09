@@ -9,7 +9,8 @@
 
         <TextView
             android:id="@+id/textView_winner_name"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:textSize="20sp" />
 
         <TextView
             android:text="Hidden"

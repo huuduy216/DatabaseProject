@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setTitle("Select a Search Option");
         initButtons();
         findViewById(R.id.layout_searchChoice).setVisibility(View.INVISIBLE);//hide the buttons
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 hello.setText("What do you want to look for?");
                 findViewById(R.id.layout_searchChoice).setVisibility(View.VISIBLE);
             }
-        }, 1500);//Set new text and delay a bit
+        }, 3000);//Set new text and delay a bit
 
 
     }

@@ -34,6 +34,7 @@ public class EventActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
+        setTitle("Sport Results");
         lv = (ListView) findViewById(R.id.listView_event);
         lv.setVisibility(View.INVISIBLE);//hide the listview that show the result
 
